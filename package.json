@@ -8,6 +8,7 @@
     "lib": "vue-cli-service build --mode production --dest dist --target lib --name starter ./src/main.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "dist/starter.umd.js",
   "dependencies": {
     "core-js": "^2.6.5",
     "iview": "^3.0.1",
@@ -27,5 +28,9 @@
     "less-loader": "^4.1.0",
     "vue-cli-plugin-iview": "^1.0.6",
     "vue-template-compiler": "^2.6.10"
+  },
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/YudongYang/vue-starter"
   }
 }
