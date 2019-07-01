@@ -1,13 +1,25 @@
-import Vue from "vue";
-import App from "./App.vue";
-import router from "./router";
-import store from "./store";
-import './plugins/iview.js'
+import LayoutMenuLeft from "@c/LayoutMenuLeft";
+import AvatarBadge from "@c/AvatarBadge";
 
-Vue.config.productionTip = false;
+const components = {
+  LayoutMenuLeft,
+  AvatarBadge
+};
 
-new Vue({
-  router,
-  store,
-  render: h => h(App)
-}).$mount("#app");
+const install = function(Vue) {
+  Object.keys(components).forEach(key => {
+    Vue.component(key, components[key]);
+  });
+};
+
+// auto install
+if (typeof window !== "undefined" && window.Vue) {
+  install(window.Vue);
+}
+
+const API = {
+  install,
+  ...components
+};
+
+export default API;
